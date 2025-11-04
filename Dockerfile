@@ -9,9 +9,8 @@ RUN dnf -y install epel-release && \
 RUN . /opt/omero/server/venv3/bin/activate && \
     pip install --no-cache-dir omero-metadata
 
-
+COPY --chown=omero-server:omero-server scripts/  /opt/omero/server/OMERO.server/lib/scripts/omero/
 
 USER omero-server
-COPY --chown=omero-server:omero-server scripts/  /opt/omero/server/OMERO.server/lib/scripts/omero/
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
