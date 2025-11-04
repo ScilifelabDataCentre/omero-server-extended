@@ -14,7 +14,7 @@ jobs:
       packages: write         # push to GHCR with GITHUB_TOKEN
       id-token: write         # keyless signing (cosign OIDC)
     env:
-      IMAGE: ghcr.io/ScilifelabDataCentre/omero-server-extended
+      IMAGE: ghcr.io/scilifelabdatacentre/omero-server-extended
     steps:
       - uses: actions/checkout@v4
 
