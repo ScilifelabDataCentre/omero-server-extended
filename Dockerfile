@@ -9,7 +9,10 @@ RUN dnf -y install epel-release && \
 RUN . /opt/omero/server/venv3/bin/activate && \
     pip install --no-cache-dir omero-metadata
 
-COPY --chown=omero-server:omero scripts/  /opt/omero/server/OMERO.server-5.6.16-ice36/lib/scripts/omero/
+COPY scripts/  /opt/omero/server/OMERO.server-5.6.16-ice36/lib/scripts/omero/
+
+# change the ownership of the scripts folder to omero-server
+RUN chown -R omero-server:omero /opt/omero/server/OMERO.server-5.6.16-ice36/lib/scripts/omero/
 
 USER omero-server
 
