@@ -17,7 +17,7 @@ Custom OMERO.server image based on the official `openmicroscopy/omero-server:5.6
   - `import_scripts/`
   - `util_scripts/`
 
-**NOTE**: The scripts are available in OMERO clients under the `omero-scripts` [git repository](https://github.com/ome/omero-scripts/tree/develop) except `Figure_To_Pdf.py` which is available in the `omero-figure` [git repository](https://github.com/ome/omero-figure/tree/master/omero_figure/scripts/omero/figure_scripts).
+**NOTE**: The core scripts are available in OMERO clients under the `omero-scripts` [git repository](https://github.com/ome/omero-scripts/tree/develop) except `Figure_To_Pdf.py` which is available in the `omero-figure` [git repository](https://github.com/ome/omero-figure/tree/master/omero_figure/scripts/omero/figure_scripts).
 
 ### Requirements
 
