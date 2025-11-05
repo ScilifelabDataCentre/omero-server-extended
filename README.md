@@ -27,7 +27,7 @@ Custom OMERO.server image based on the official `openmicroscopy/omero-server:5.6
 Prebuilt image:
 
 ```bash
-docker pull ghcr.io/scilifelabdatacentre/omero-server-extended:sha-c128588
+docker pull ghcr.io/scilifelabdatacentre/omero-server-extended:latest
 ```
 
 ### Run (basic example)
@@ -42,7 +42,7 @@ docker run -d --name omero-server \
   -e OMERO_DB_USER=omero \
   -e OMERO_DB_PASS=omero \
   -e OMERO_ROOT_PASSWORD=change-me \
-  ghcr.io/scilifelabdatacentre/omero-server-extended:sha-c128588
+  ghcr.io/scilifelabdatacentre/omero-server-extended:latest
 ```
 
 - To iterate on scripts without rebuilding the image, you can bind-mount your local `scripts/` into the container:
@@ -53,7 +53,7 @@ docker run -d --name omero-dev \
   -v "$(pwd)/scripts:/opt/omero/server/OMERO.server/lib/scripts/omero:ro" \
   -e OMERO_DB_HOST=postgres -e OMERO_DB_NAME=omero -e OMERO_DB_USER=omero -e OMERO_DB_PASS=omero \
   -e OMERO_ROOT_PASSWORD=change-me \
-  ghcr.io/scilifelabdatacentre/omero-server-extended:sha-c128588
+  ghcr.io/scilifelabdatacentre/omero-server-extended:latest
 ```
 
 - To add Python dependencies for the scripts, update the `Dockerfile` to `pip install` them inside `/opt/omero/server/venv3`
@@ -83,7 +83,7 @@ spec:
     spec:
       containers:
         - name: omero-server
-          image: ghcr.io/scilifelabdatacentre/omero-server-extended:sha-c128588
+          image: ghcr.io/scilifelabdatacentre/omero-server-extended:latest
           imagePullPolicy: IfNotPresent
 # the rest of the manifest...
 ```
